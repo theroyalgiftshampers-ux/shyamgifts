@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shyam Gift & Customised Hampers – Catalogue 2024</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --gold: #C8972A; --gold-light: #F0C96B; --gold-dark: #9A6F1A;
+      --deep: #1A0A00; --cream: #FDF6EC; --white: #FFFFFF;
+      --accent: #8B1A1A; --accent2: #2A5C45;
+      --text: #2C1A00; --muted: #7A6040;
+      --card-bg: #FFFDF8; --border: #E8D5A0;
+      --purple: #6A35A8; --blue: #1E5C9C;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background: var(--cream); color: var(--text); }
+
+    .topbar { background: var(--deep); color: #ccc; font-size: 12px; text-align: center; padding: 7px 20px; letter-spacing: 1px; }
+
+    header {
+      background: linear-gradient(135deg, #1A0A00 0%, #3D1C00 60%, #5C2E00 100%);
+      padding: 0 40px; display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4); min-height: 80px;
+    }
+    .logo-block { display: flex; align-items: center; gap: 14px; }
+    .logo-icon {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 26px; box-shadow: 0 0 20px rgba(200,151,42,0.5);
+    }
+    .logo-text { line-height: 1.2; }
+    .logo-text h1 { font-family: 'Playfair Display', serif; color: var(--gold-light); font-size: 20px; }
+    .logo-text span { color: #ccc; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
+    .header-contact { display: flex; gap: 20px; font-size: 12px; color: #d4b87a; }
+    .header-contact a { color: #d4b87a; text-decoration: none; display: flex; align-items: center; gap: 5px; }
+    .header-contact a:hover { color: var(--gold-light); }
+
+    nav {
+      background: rgba(26,10,0,0.97); display: flex; justify-content: center;
+      gap: 32px; padding: 10px 40px;
+      border-bottom: 1px solid rgba(200,151,42,0.2);
+    }
+    nav a { color: #c0a07a; text-decoration: none; font-size: 12.5px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; transition: color 0.2s; }
+    nav a:hover { color: var(--gold-light); }
+
+    .hero {
+      background: linear-gradient(135deg, #1A0A00 0%, #3D1C00 40%, #C8972A 100%);
+      padding: 80px 60px; display: flex; align-items: center; justify-content: space-between;
+      gap: 40px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; width: 500px; height: 500px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(200,151,42,0.2) 0%, transparent 70%);
+      top: -100px; right: -100px;
+    }
+    .hero-text { max-width: 580px; position: relative; z-index: 2; }
+    .hero-tag {
+      display: inline-block; background: var(--gold); color: var(--deep);
+      font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+      padding: 5px 16px; border-radius: 20px; margin-bottom: 20px;
+    }
+    .hero-text h2 { font-family: 'Playfair Display', serif; font-size: 52px; color: var(--white); line-height: 1.15; margin-bottom: 18px; }
+    .hero-text h2 span { color: var(--gold-light); }
+    .hero-text p { color: #d4c4a0; font-size: 16px; line-height: 1.8; margin-bottom: 28px; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--deep);
+      padding: 13px 30px; border: none; border-radius: 4px; font-weight: 700; font-size: 14px;
+      cursor: pointer; text-decoration: none; display: inline-block;
+      box-shadow: 0 4px 15px rgba(200,151,42,0.5); transition: transform 0.2s;
+    }
+    .btn-gold:hover { transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent; color: var(--gold-light); padding: 12px 28px;
+      border: 2px solid var(--gold); border-radius: 4px; font-weight: 600; font-size: 14px;
+      cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.2s;
+    }
+    .btn-outline:hover { background: rgba(200,151,42,0.15); }
+    .hero-image { flex-shrink: 0; position: relative; z-index: 2; }
+    .hero-image img { width: 340px; height: 260px; object-fit: cover; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); border: 3px solid rgba(200,151,42,0.4); }
+
+    .trust-strip { background: var(--gold); padding: 14px 40px; display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; }
+    .trust-item { display: flex; align-items: center; gap: 8px; color: var(--deep); font-weight: 600; font-size: 13px; }
+    .trust-item span { font-size: 18px; }
+
+    .section-header { text-align: center; padding: 60px 20px 10px; }
+    .section-header .eyebrow { color: var(--gold-dark); font-size: 12px; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; margin-bottom: 10px; }
+    .section-header h2 { font-family: 'Playfair Display', serif; font-size: 38px; color: var(--deep); margin-bottom: 12px; }
+    .section-header p { color: var(--muted); font-size: 15px; max-width: 560px; margin: 0 auto 10px; line-height: 1.7; }
+    .divider-gold { width: 80px; height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); margin: 18px auto 50px; border-radius: 2px; }
+
+    /* HAMPER CARDS */
+    .hampers-grid { padding: 0 50px 80px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 36px; }
+    .hamper-card {
+      background: var(--card-bg); border-radius: 16px; border: 1px solid var(--border);
+      box-shadow: 0 6px 28px rgba(0,0,0,0.07); overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s; position: relative;
+    }
+    .hamper-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(0,0,0,0.13); }
+    .hamper-badge {
+      position: absolute; top: 14px; left: 14px; color: white;
+      font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 5px 12px; border-radius: 3px; z-index: 3;
+    }
+    .hamper-img-wrap { position: relative; }
+    .hamper-img { width: 100%; height: 220px; object-fit: cover; display: block; }
+    .hamper-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(26,10,0,0.75));
+      padding: 30px 20px 14px;
+    }
+    .hamper-overlay-title { font-family: 'Playfair Display', serif; color: var(--gold-light); font-size: 22px; font-style: italic; }
+    .hamper-body { padding: 22px 24px; }
+    .hamper-desc { color: var(--muted); font-size: 13.5px; line-height: 1.75; margin-bottom: 20px; }
+
+    .inside-box { background: linear-gradient(135deg, #FFF8E8, #FDF0D0); border: 1px solid #E8D5A0; border-radius: 10px; padding: 16px 18px; margin-bottom: 20px; }
+    .inside-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+    .inside-items { display: grid; grid-template-columns: 1fr 1fr; gap: 7px 16px; list-style: none; }
+    .inside-items li { font-size: 12.5px; color: var(--text); display: flex; align-items: flex-start; gap: 6px; line-height: 1.5; }
+    .inside-items li::before { content: '✦'; color: var(--gold); font-size: 9px; margin-top: 3px; flex-shrink: 0; }
+
+    .price-tiers { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+    .tier { flex: 1; min-width: 80px; background: var(--cream); border: 1.5px solid var(--border); border-radius: 8px; padding: 10px 12px; text-align: center; }
+    .tier.highlighted { background: linear-gradient(135deg, #1A0A00, #3D1C00); border-color: var(--gold); }
+    .tier-label { font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+    .tier.highlighted .tier-label { color: #c0a07a; }
+    .tier-price { font-size: 15px; font-weight: 700; color: var(--accent); }
+    .tier.highlighted .tier-price { color: var(--gold-light); }
+    .tier-items { font-size: 10px; color: var(--muted); margin-top: 2px; }
+    .tier.highlighted .tier-items { color: #998060; }
+
+    .hamper-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+    .tag { background: #F0E8D0; color: var(--gold-dark); font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; border: 1px solid #E8D5A0; }
+
+    .hamper-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 16px; border-top: 1px solid var(--border); }
+    .hf-left { font-size: 12px; color: var(--muted); }
+    .hf-left strong { display: block; font-size: 11px; color: var(--text); margin-bottom: 2px; }
+
+    .btn-enquire {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--deep);
+      border: none; padding: 10px 20px; border-radius: 4px; font-size: 12px; font-weight: 700;
+      cursor: pointer; text-decoration: none; display: inline-block; transition: opacity 0.2s, transform 0.2s;
+    }
+    .btn-enquire:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    .occasion-strip {
+      background: linear-gradient(135deg, #1A0A00 0%, #3D1C00 100%);
+      padding: 50px 60px; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 30px; text-align: center;
+    }
+    .occ-item { color: #d4c4a0; }
+    .occ-icon { font-size: 36px; margin-bottom: 10px; }
+    .occ-item h4 { font-family: 'Playfair Display', serif; color: var(--gold-light); font-size: 15px; margin-bottom: 4px; }
+    .occ-item p { font-size: 12px; color: #b0987a; line-height: 1.5; }
+
+    .process-section { background: var(--cream); padding: 0 60px 70px; }
+    .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+    .process-steps::before {
+      content: ''; position: absolute; top: 28px; left: 12%; right: 12%; height: 2px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold)); z-index: 0;
+    }
+    .step { text-align: center; position: relative; z-index: 1; }
+    .step-num {
+      width: 56px; height: 56px; background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 20px; margin: 0 auto 16px; box-shadow: 0 4px 16px rgba(200,151,42,0.4);
+    }
+    .step h4 { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--deep); margin-bottom: 6px; }
+    .step p { font-size: 12.5px; color: var(--muted); line-height: 1.6; padding: 0 10px; }
+
+    .features-row {
+      background: linear-gradient(135deg, #1A0A00 0%, #3D1C00 100%);
+      padding: 70px 60px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center;
+    }
+    .feat-item { color: #d4c4a0; }
+    .feat-icon { font-size: 40px; margin-bottom: 14px; }
+    .feat-item h4 { font-family: 'Playfair Display', serif; color: var(--gold-light); font-size: 17px; margin-bottom: 8px; }
+    .feat-item p { font-size: 13px; line-height: 1.7; color: #b0987a; }
+
+    .testimonials { padding: 30px 50px 70px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .testi-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 28px; position: relative; }
+    .testi-card::before { content: '"'; font-family: 'Playfair Display', serif; font-size: 80px; color: var(--gold-light); opacity: 0.3; position: absolute; top: 5px; left: 18px; line-height: 1; }
+    .stars { color: var(--gold); font-size: 16px; margin-bottom: 12px; }
+    .testi-card p { color: var(--muted); font-size: 14px; line-height: 1.8; margin-bottom: 16px; padding-top: 10px; }
+    .testi-author { font-weight: 700; font-size: 13px; color: var(--deep); }
+    .testi-role { font-size: 11px; color: var(--muted); }
+
+    .contact-section { background: var(--cream); padding: 20px 50px 70px; }
+    .contact-box {
+      background: linear-gradient(135deg, #1A0A00, #3D1C00); border-radius: 16px; padding: 60px;
+      display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; position: relative; overflow: hidden;
+    }
+    .contact-box::after { content: '🎁'; font-size: 200px; position: absolute; right: -30px; bottom: -30px; opacity: 0.07; }
+    .contact-text h2 { font-family: 'Playfair Display', serif; color: var(--gold-light); font-size: 34px; margin-bottom: 14px; }
+    .contact-text p { color: #c0a07a; font-size: 15px; line-height: 1.8; max-width: 500px; }
+    .contact-details { display: flex; flex-direction: column; gap: 14px; flex-shrink: 0; }
+    .contact-item {
+      display: flex; align-items: center; gap: 14px;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(200,151,42,0.3);
+      border-radius: 8px; padding: 14px 20px; color: #d4c4a0; text-decoration: none; font-size: 14px; transition: background 0.2s;
+    }
+    .contact-item:hover { background: rgba(200,151,42,0.15); }
+    .contact-item .ci-icon { font-size: 22px; }
+    .contact-item strong { color: var(--gold-light); display: block; font-size: 13px; }
+
+    footer { background: var(--deep); color: #7a5c3a; text-align: center; padding: 24px 20px; font-size: 12px; letter-spacing: 0.5px; }
+    footer span { color: var(--gold); }
+
+    @media (max-width: 900px) {
+      .process-steps { grid-template-columns: repeat(2, 1fr); }
+      .process-steps::before { display: none; }
+      .hampers-grid { padding: 0 20px 60px; }
+    }
+    @media (max-width: 768px) {
+      header { padding: 14px 20px; flex-wrap: wrap; min-height: auto; }
+      .header-contact { flex-direction: column; gap: 4px; }
+      nav { gap: 16px; flex-wrap: wrap; padding: 10px 20px; }
+      .hero { flex-direction: column; padding: 50px 24px; text-align: center; }
+      .hero-text h2 { font-size: 34px; }
+      .hero-image img { width: 100%; max-width: 340px; }
+      .hero-btns { justify-content: center; }
+      .trust-strip { gap: 20px; padding: 12px 20px; }
+      .hampers-grid { grid-template-columns: 1fr; padding: 0 16px 50px; }
+      .inside-items { grid-template-columns: 1fr; }
+      .price-tiers { flex-direction: column; }
+      .occasion-strip { padding: 40px 24px; }
+      .process-section { padding: 0 20px 50px; }
+      .process-steps { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+      .features-row { padding: 50px 24px; }
+      .testimonials { padding: 20px 20px 50px; }
+      .contact-box { padding: 36px 24px; }
+      .contact-section { padding: 20px 20px 50px; }
+      .section-header { padding: 40px 20px 10px; }
+      .section-header h2 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">🎁 Free Customisation on Orders Above ₹2,000 &nbsp;|&nbsp; Pan-India Delivery Available &nbsp;|&nbsp; Bulk Corporate Orders Welcome</div>
+
+<header>
+  <div class="logo-block">
+    <div class="logo-icon">🎁</div>
+    <div class="logo-text">
+      <h1>Shyam Gift &amp; Customised Hampers</h1>
+      <span>Crafting Memories, One Gift at a Time</span>
+    </div>
+  </div>
+  <div class="header-contact">
+    <a href="tel:7817033850">📞 78170 33850</a>
+    <a href="mailto:theroyalgiftshampers@gmail.com">✉ theroyalgiftshampers@gmail.com</a>
+  </div>
+</header>
+
+<nav>
+  <a href="#hampers">Our Hampers</a>
+  <a href="#occasions">Occasions</a>
+  <a href="#process">How It Works</a>
+  <a href="#testimonials">Reviews</a>
+  <a href="#contact">Order Now</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-tag">✨ Premium Gift Collection 2024</div>
+    <h2>Give the Gift of <span>Pure Joy</span> &amp; Luxury</h2>
+    <p>From heartfelt birthday hampers to elegant corporate packs and enchanting wedding gifts — every box we craft tells a story. Fully customised, beautifully packaged, delivered with love.</p>
+    <div class="hero-btns">
+      <a href="tel:7817033850" class="btn-gold">📞 Order Now – Call / WhatsApp</a>
+      <a href="mailto:theroyalgiftshampers@gmail.com" class="btn-outline">✉ Get a Free Quote</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=700&auto=format&fit=crop" alt="Luxury Gift Hamper"
+      onerror="this.src='https://images.unsplash.com/photo-1513201099705-a9746e1e201f?w=700&auto=format&fit=crop'" />
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="trust-item"><span>🚚</span> Fast Delivery</div>
+  <div class="trust-item"><span>🎨</span> 100% Customised</div>
+  <div class="trust-item"><span>💎</span> Premium Quality</div>
+  <div class="trust-item"><span>🤝</span> Bulk Orders Welcome</div>
+  <div class="trust-item"><span>⭐</span> 500+ Happy Clients</div>
+</div>
+
+<!-- HAMPERS SECTION -->
+<div id="hampers" class="section-header">
+  <div class="eyebrow">Our Collections</div>
+  <h2>Explore Our Hampers – Item by Item</h2>
+  <p>Har hamper ke andar kya hoga — poori jankari neeche di gayi hai. Price tiers mein se apne budget ke hisaab se choose karein.</p>
+  <div class="divider-gold"></div>
+</div>
+
+<div class="hampers-grid">
+
+  <!-- 1. CORPORATE -->
+  <div class="hamper-card">
+    <div class="hamper-badge" style="background:var(--gold-dark);">⭐ Most Popular</div>
+    <div class="hamper-img-wrap">
+      <img class="hamper-img" src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=700&auto=format&fit=crop" alt="Corporate Gift Pack"
+        onerror="this.src='https://images.unsplash.com/photo-1513201099705-a9746e1e201f?w=600'" />
+      <div class="hamper-overlay"><div class="hamper-overlay-title">Corporate Gift Packs 🏢</div></div>
+    </div>
+    <div class="hamper-body">
+      <p class="hamper-desc">Clients, employees aur partners ko impress karein is premium branded gift pack se — jo ek lasting professional impression chodta hai. Logo branding aur message card ke saath.</p>
+      <div class="inside-box">
+        <div class="inside-title">📦 Hamper Mein Kya Hai</div>
+        <ul class="inside-items">
+          <li>Assorted premium chocolates (Ferrero / Lindt)</li>
+          <li>Dry fruits pack (kaju, badam, pista)</li>
+          <li>Branded tea / coffee sachets</li>
+          <li>Decorative diyas ya scented candles</li>
+          <li>Company logo printed card</li>
+          <li>Custom ribbon &amp; elegant gift box</li>
+          <li>Tissue paper &amp; confetti filling</li>
+          <li>Handwritten personalized message</li>
+        </ul>
+      </div>
+      <div class="price-tiers">
+        <div class="tier"><div class="tier-label">Basic</div><div class="tier-price">₹499</div><div class="tier-items">4–5 items</div></div>
+        <div class="tier highlighted"><div class="tier-label">Standard ✦</div><div class="tier-price">₹999</div><div class="tier-items">7–8 items</div></div>
+        <div class="tier"><div class="tier-label">Premium</div><div class="tier-price">₹1,799</div><div class="tier-items">10+ items</div></div>
+      </div>
+      <div class="hamper-tags">
+        <span class="tag">🏢 Corporate</span><span class="tag">🎄 Diwali Special</span><span class="tag">🖨 Logo Branding</span><span class="tag">📦 Bulk Discount</span><span class="tag">🚚 Pan-India</span>
+      </div>
+      <div class="hamper-footer">
+        <div class="hf-left"><strong>Min. Order: 10 packs</strong>Bulk mein 20% discount</div>
+        <a href="tel:7817033850" class="btn-enquire">📞 Enquire Now →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. WEDDING -->
+  <div class="hamper-card">
+    <div class="hamper-badge" style="background:var(--accent2);">💍 New Collection</div>
+    <div class="hamper-img-wrap">
+      <img class="hamper-img" src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=700&auto=format&fit=crop" alt="Wedding Gift Hamper"
+        onerror="this.src='https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?w=600'" />
+      <div class="hamper-overlay"><div class="hamper-overlay-title">Wedding Gift Hampers 💍</div></div>
+    </div>
+    <div class="hamper-body">
+      <p class="hamper-desc">Shaadi ke khubsoorat pal ko aur yaadgaar banaiye — couple ke naam ke saath personalised hamper jo guests ke dil mein ek jagah banata hai hamesha ke liye.</p>
+      <div class="inside-box">
+        <div class="inside-title">📦 Hamper Mein Kya Hai</div>
+        <ul class="inside-items">
+          <li>Mithai box (ladoo / barfi / kaju katli)</li>
+          <li>Dry fruits in decorative box</li>
+          <li>Scented soy candle (rose / jasmine)</li>
+          <li>Sindoor &amp; chandan set</li>
+          <li>Personalised couple photo frame</li>
+          <li>Red &amp; gold satin ribbon wrapping</li>
+          <li>Couple name printed gift tag</li>
+          <li>Premium floral tissue wrapping</li>
+        </ul>
+      </div>
+      <div class="price-tiers">
+        <div class="tier"><div class="tier-label">Return Gift</div><div class="tier-price">₹799</div><div class="tier-items">5–6 items</div></div>
+        <div class="tier highlighted"><div class="tier-label">Premium ✦</div><div class="tier-price">₹1,499</div><div class="tier-items">8–9 items</div></div>
+        <div class="tier"><div class="tier-label">Royal</div><div class="tier-price">₹2,499</div><div class="tier-items">12+ items</div></div>
+      </div>
+      <div class="hamper-tags">
+        <span class="tag">💍 Wedding</span><span class="tag">🎀 Return Gift</span><span class="tag">📸 Photo Print</span><span class="tag">🌸 Reception Pack</span><span class="tag">🙏 Engagement</span>
+      </div>
+      <div class="hamper-footer">
+        <div class="hf-left"><strong>Min. Order: 25 packs</strong>100+ orders par special rate</div>
+        <a href="tel:7817033850" class="btn-enquire">📞 Enquire Now →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. BIRTHDAY -->
+  <div class="hamper-card">
+    <div class="hamper-badge" style="background:var(--purple);">🎂 Bestseller</div>
+    <div class="hamper-img-wrap">
+      <img class="hamper-img" src="https://images.unsplash.com/photo-1558636508-e0a4a4bb3a7e?w=700&auto=format&fit=crop" alt="Birthday Gift Hamper"
+        onerror="this.src='https://images.unsplash.com/photo-1513201099705-a9746e1e201f?w=600'" />
+      <div class="hamper-overlay"><div class="hamper-overlay-title">Birthday Gift Hampers 🎂</div></div>
+    </div>
+    <div class="hamper-body">
+      <p class="hamper-desc">Birthday ko superfun banao is colourful aur surprise-filled hamper se! Kids se lekar seniors tak — sab ke liye alag alag theme, same-day delivery bhi available.</p>
+      <div class="inside-box">
+        <div class="inside-title">📦 Hamper Mein Kya Hai</div>
+        <ul class="inside-items">
+          <li>Birthday printed gift box (custom name)</li>
+          <li>Assorted chocolates &amp; candy pack</li>
+          <li>Birthday candles &amp; sparklers</li>
+          <li>Personalised greeting card</li>
+          <li>Favourite snacks / chips pack</li>
+          <li>Mini soft toy / cute keychain</li>
+          <li>Confetti &amp; balloon set</li>
+          <li>Surprise reveal inner box</li>
+        </ul>
+      </div>
+      <div class="price-tiers">
+        <div class="tier"><div class="tier-label">Kids Pack</div><div class="tier-price">₹399</div><div class="tier-items">4–5 items</div></div>
+        <div class="tier highlighted"><div class="tier-label">Standard ✦</div><div class="tier-price">₹799</div><div class="tier-items">7–8 items</div></div>
+        <div class="tier"><div class="tier-label">Surprise Box</div><div class="tier-price">₹1,299</div><div class="tier-items">10+ items</div></div>
+      </div>
+      <div class="hamper-tags">
+        <span class="tag">🎂 Birthday</span><span class="tag">🧒 Kids Special</span><span class="tag">⚡ Same-Day Delivery</span><span class="tag">🎉 Surprise Box</span><span class="tag">🎈 All Ages</span>
+      </div>
+      <div class="hamper-footer">
+        <div class="hf-left"><strong>Same-day delivery available</strong>Local orders ke liye call karein</div>
+        <a href="tel:7817033850" class="btn-enquire">📞 Enquire Now →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. CUSTOMIZED -->
+  <div class="hamper-card">
+    <div class="hamper-badge" style="background:var(--blue);">✨ 100% Custom</div>
+    <div class="hamper-img-wrap">
+      <img class="hamper-img" src="https://images.unsplash.com/photo-1542601906897-5e82db95a52e?w=700&auto=format&fit=crop" alt="Customized Hamper"
+        onerror="this.src='https://images.unsplash.com/photo-1545873994-c5fc73a2e87c?w=600'" />
+      <div class="hamper-overlay"><div class="hamper-overlay-title">Customized Hampers ✨</div></div>
+    </div>
+    <div class="hamper-body">
+      <p class="hamper-desc">Aap choose karo — hum banate hain! Contents, colours, theme, message — sab kuch aapki marzi se. Spa hamper, foodie box, travel kit ya koi bhi occasion ke liye bilkul aapka design.</p>
+      <div class="inside-box">
+        <div class="inside-title">📦 Aap Choose Karo – We Pack It!</div>
+        <ul class="inside-items">
+          <li>Your choice of snacks / sweets</li>
+          <li>Photo-printed custom box lid</li>
+          <li>Personalised name ribbon</li>
+          <li>Spa items (lotion, bath salts etc.)</li>
+          <li>Handwritten message card</li>
+          <li>Themed packaging (travel / spa / foodie)</li>
+          <li>Custom colour tissue &amp; confetti</li>
+          <li>Any add-on item of your choice</li>
+        </ul>
+      </div>
+      <div class="price-tiers">
+        <div class="tier"><div class="tier-label">Mini</div><div class="tier-price">₹299</div><div class="tier-items">3–4 items</div></div>
+        <div class="tier highlighted"><div class="tier-label">Custom ✦</div><div class="tier-price">₹699+</div><div class="tier-items">Your choice</div></div>
+        <div class="tier"><div class="tier-label">Luxury</div><div class="tier-price">₹1,999+</div><div class="tier-items">15+ items</div></div>
+      </div>
+      <div class="hamper-tags">
+        <span class="tag">✨ Fully Custom</span><span class="tag">🛁 Spa Theme</span><span class="tag">✈️ Travel Kit</span><span class="tag">🍫 Foodie Box</span><span class="tag">📸 Photo Box</span>
+      </div>
+      <div class="hamper-footer">
+        <div class="hf-left"><strong>Koi bhi occasion, koi bhi budget</strong>WhatsApp par design share karein</div>
+        <a href="tel:7817033850" class="btn-enquire">📞 Enquire Now →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. DIWALI / FESTIVE -->
+  <div class="hamper-card">
+    <div class="hamper-badge" style="background:#B8600A;">🪔 Festive Special</div>
+    <div class="hamper-img-wrap">
+      <img class="hamper-img" src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=700&auto=format&fit=crop" alt="Diwali Hamper"
+        onerror="this.src='https://images.unsplash.com/photo-1513201099705-a9746e1e201f?w=600'" />
+      <div class="hamper-overlay"><div class="hamper-overlay-title">Diwali & Festive Hampers 🪔</div></div>
+    </div>
+    <div class="hamper-body">
+      <p class="hamper-desc">Tyohaar ka mausam aur gifts ka season — Diwali, Holi, Eid, Christmas, New Year ke liye special themed hampers. Apno ko khush karo iss parv par ek sundar gift se.</p>
+      <div class="inside-box">
+        <div class="inside-title">📦 Hamper Mein Kya Hai</div>
+        <ul class="inside-items">
+          <li>Decorative diya set (4–6 diyas)</li>
+          <li>Dry fruits box (premium quality)</li>
+          <li>Assorted mithai / sweets box</li>
+          <li>Scented wax candles</li>
+          <li>Puja thali items set</li>
+          <li>Gold foil Diwali box packaging</li>
+          <li>Lakshmi Ganesh idol (small brass)</li>
+          <li>Festive greeting card</li>
+        </ul>
+      </div>
+      <div class="price-tiers">
+        <div class="tier"><div class="tier-label">Classic</div><div class="tier-price">₹599</div><div class="tier-items">5–6 items</div></div>
+        <div class="tier highlighted"><div class="tier-label">Grand ✦</div><div class="tier-price">₹1,199</div><div class="tier-items">8–9 items</div></div>
+        <div class="tier"><div class="tier-label">Royal</div><div class="tier-price">₹2,199</div><div class="tier-items">12+ items</div></div>
+      </div>
+      <div class="hamper-tags">
+        <span class="tag">🪔 Diwali</span><span class="tag">🎆 New Year</span><span class="tag">🌙 Eid</span><span class="tag">🎄 Christmas</span><span class="tag">🌸 Holi</span>
+      </div>
+      <div class="hamper-footer">
+        <div class="hf-left"><strong>Pre-booking recommended</strong>Festive season mein jaldi bharo</div>
+        <a href="tel:7817033850" class="btn-enquire">📞 Book Now →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. BABY SHOWER -->
+  <div class="hamper-card">
+    <div class="hamper-badge" style="background:#E07B9A;">👶 New Arrival</div>
+    <div class="hamper-img-wrap">
+      <img class="hamper-img" src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=700&auto=format&fit=crop" alt="Baby Shower Hamper"
+        onerror="this.src='https://images.unsplash.com/photo-1513201099705-a9746e1e201f?w=600'" />
+      <div class="hamper-overlay"><div class="hamper-overlay-title">Baby Shower & Newborn 👶</div></div>
+    </div>
+    <div class="hamper-body">
+      <p class="hamper-desc">Naye mehman ka swagat karo is adorable aur heartwarming hamper se. Maa aur baby dono ke liye curated items — jo gift dekhein, aankhein bhar aaein khushi se.</p>
+      <div class="inside-box">
+        <div class="inside-title">📦 Hamper Mein Kya Hai</div>
+        <ul class="inside-items">
+          <li>Soft baby muslin cloth set</li>
+          <li>Baby booties / tiny socks</li>
+          <li>Johnson's baby care kit</li>
+          <li>Organic dry fruits for mom</li>
+          <li>Cute soft toy / rattle</li>
+          <li>Pink / Blue themed gift box</li>
+          <li>"It's a Boy / Girl" printed card</li>
+          <li>Baby name personalised tag</li>
+        </ul>
+      </div>
+      <div class="price-tiers">
+        <div class="tier"><div class="tier-label">Sweet</div><div class="tier-price">₹699</div><div class="tier-items">5–6 items</div></div>
+        <div class="tier highlighted"><div class="tier-label">Lovely ✦</div><div class="tier-price">₹1,299</div><div class="tier-items">8–9 items</div></div>
+        <div class="tier"><div class="tier-label">Grand</div><div class="tier-price">₹1,999</div><div class="tier-items">12+ items</div></div>
+      </div>
+      <div class="hamper-tags">
+        <span class="tag">👶 Newborn</span><span class="tag">🍼 Baby Shower</span><span class="tag">💗 Baby Girl</span><span class="tag">💙 Baby Boy</span><span class="tag">🌸 Mom Care</span>
+      </div>
+      <div class="hamper-footer">
+        <div class="hf-left"><strong>Personalised name available</strong>Name tag free with all orders</div>
+        <a href="tel:7817033850" class="btn-enquire">📞 Enquire Now →</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- OCCASIONS -->
+<div id="occasions" class="section-header">
+  <div class="eyebrow">Every Moment Matters</div>
+  <h2>Har Occasion Ke Liye – Perfect Hamper</h2>
+  <div class="divider-gold"></div>
+</div>
+<div class="occasion-strip">
+  <div class="occ-item"><div class="occ-icon">🎂</div><h4>Birthday</h4><p>Surprise aur delight har umar mein</p></div>
+  <div class="occ-item"><div class="occ-icon">💍</div><h4>Wedding</h4><p>Return gifts &amp; couple hampers</p></div>
+  <div class="occ-item"><div class="occ-icon">🏢</div><h4>Corporate</h4><p>Employee &amp; client gifting</p></div>
+  <div class="occ-item"><div class="occ-icon">🪔</div><h4>Diwali</h4><p>Festive season special hampers</p></div>
+  <div class="occ-item"><div class="occ-icon">👶</div><h4>Baby Shower</h4><p>Newborn welcome hampers</p></div>
+  <div class="occ-item"><div class="occ-icon">🎓</div><h4>Graduation</h4><p>Achievement celebration boxes</p></div>
+  <div class="occ-item"><div class="occ-icon">💝</div><h4>Anniversary</h4><p>Couple ke liye romantic gifts</p></div>
+  <div class="occ-item"><div class="occ-icon">🌸</div><h4>Holi / Eid</h4><p>Festival joy aur rang</p></div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div id="process" class="section-header">
+  <div class="eyebrow">Simple Process</div>
+  <h2>How It Works – 4 Easy Steps</h2>
+  <p>WhatsApp ya call karein aur hum baaki sab handle karte hain.</p>
+  <div class="divider-gold"></div>
+</div>
+<div class="process-section">
+  <div class="process-steps">
+    <div class="step">
+      <div class="step-num">📞</div>
+      <h4>1. Contact Us</h4>
+      <p>Call ya WhatsApp par apni requirement share karein — occasion, quantity, budget</p>
+    </div>
+    <div class="step">
+      <div class="step-num">🎨</div>
+      <h4>2. We Design</h4>
+      <p>Humara team aapke liye customised hamper design karta hai aur preview bhejta hai</p>
+    </div>
+    <div class="step">
+      <div class="step-num">✅</div>
+      <h4>3. Confirm &amp; Pay</h4>
+      <p>Design approve karo, advance payment karo aur hum production start karte hain</p>
+    </div>
+    <div class="step">
+      <div class="step-num">🚚</div>
+      <h4>4. Delivered!</h4>
+      <p>Beautifully packed hamper aapke darwaaze tak pehunch jaata hai time par</p>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<div class="features-row">
+  <div class="feat-item"><div class="feat-icon">🎨</div><h4>Full Customisation</h4><p>Har hamper uniquely crafted — aapki vision, occasion aur budget ke hisaab se. Kuch bhi off-the-shelf nahi.</p></div>
+  <div class="feat-item"><div class="feat-icon">📦</div><h4>Premium Packaging</h4><p>Sundar boxes, satin ribbons, tissue paper aur finishing touches jo unboxing ko memorable banate hain.</p></div>
+  <div class="feat-item"><div class="feat-icon">⚡</div><h4>Quick Turnaround</h4><p>Urgent order? Koi problem nahi — timely delivery ensure karte hain taaki aap koi occasion miss na karein.</p></div>
+  <div class="feat-item"><div class="feat-icon">💰</div><h4>Budget-Friendly</h4><p>Premium quality, honest prices. Bulk orders mein extra discount — corporate aur events ke liye ideal.</p></div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div id="testimonials" class="section-header">
+  <div class="eyebrow">Customer Love</div>
+  <h2>What Our Clients Say</h2>
+  <p>500+ khush customers Shyam Gift Hampers par bharosa karte hain har khaas mauke ke liye.</p>
+  <div class="divider-gold"></div>
+</div>
+<div class="testimonials">
+  <div class="testi-card">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <p>Diwali ke liye 50 corporate gift packs order kiye. Quality exceptional thi aur delivery on time aayi. Clients ne bahut tarif ki! Definitely dobara order karenge.</p>
+    <div class="testi-author">Rahul Sharma</div>
+    <div class="testi-role">Business Owner, Delhi</div>
+  </div>
+  <div class="testi-card">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <p>Wedding return gifts bilkul stunning the. Guests packaging ki tarif karte nahi thake. Hamaari shaadi ka best decision tha Shyam Hampers ko choose karna!</p>
+    <div class="testi-author">Priya &amp; Ankit</div>
+    <div class="testi-role">Newly Married Couple</div>
+  </div>
+  <div class="testi-card">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <p>Meri maa ke birthday ke liye customised hamper tha — photo box, unke favourite chocolates — sab kuch perfect tha! Expectations se bhi zyada sundar aaya. Highly recommended!</p>
+    <div class="testi-author">Sneha Gupta</div>
+    <div class="testi-role">Happy Customer</div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="contact-section">
+  <div class="contact-box">
+    <div class="contact-text">
+      <h2>Ready to Create Something Beautiful?</h2>
+      <p>Aaj hi contact karein apni gifting needs ke baare mein baat karne ke liye. Chahe 1 hamper ho ya 1,000 — hum har order ko equally care aur dedication se handle karte hain. Chaliye milke banate hain kuch unforgettable!</p>
+    </div>
+    <div class="contact-details">
+      <a href="tel:7817033850" class="contact-item"><span class="ci-icon">📞</span><div><strong>Call / WhatsApp</strong>78170 33850</div></a>
+      <a href="mailto:theroyalgiftshampers@gmail.com" class="contact-item"><span class="ci-icon">✉</span><div><strong>Email Us</strong>theroyalgiftshampers@gmail.com</div></a>
+      <div class="contact-item" style="cursor:default;"><span class="ci-icon">🕐</span><div><strong>Working Hours</strong>Mon – Sat, 9 AM – 8 PM</div></div>
+      <div class="contact-item" style="cursor:default;"><span class="ci-icon">📍</span><div><strong>Delivery</strong>Pan-India | Same-Day (Local)</div></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2024 <span>Shyam Gift &amp; Customised Hampers</span> · All Rights Reserved · Made with ❤️ for every occasion<br>
+  <span style="color:#5a4020;font-size:11px;margin-top:5px;display:block;">📞 78170 33850 &nbsp;|&nbsp; ✉ theroyalgiftshampers@gmail.com</span>
+</footer>
+
+</body>
+</html>
